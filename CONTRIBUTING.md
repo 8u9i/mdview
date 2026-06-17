@@ -18,7 +18,7 @@ Be respectful. Assume good faith. Disagree on ideas, not on people.
 ### First run
 
 ```bash
-git clone https://github.com/your-org/mdview.git
+git clone https://github.com/8u9i/mdview.git
 cd mdview
 npm install
 npm run dev          # opens the Tauri window with HMR

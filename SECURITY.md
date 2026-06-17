@@ -10,7 +10,7 @@
 
 **Please do not open a public GitHub issue for security vulnerabilities.**
 
-Email `security@your-org.example` with:
+Open a [private security advisory](https://github.com/8u9i/mdview/security/advisories/new) on GitHub, or email the maintainer at the address listed on their GitHub profile, with:
 
 - A description of the vulnerability and its impact.
 - Reproduction steps (or a proof-of-concept).

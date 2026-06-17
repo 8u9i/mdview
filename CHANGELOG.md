@@ -32,5 +32,5 @@ All notable changes to MDView are documented in this file. The format follows [K
 - Accessibility: focus-visible rings, ARIA labels on icon buttons, `aria-live` toast, scroll-spy throttled with `requestAnimationFrame`, `prefers-reduced-motion` respected.
 - Standalone ~3.6 MB executable.
 
-[Unreleased]: https://github.com/your-org/mdview/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/your-org/mdview/releases/tag/v0.1.0
+[Unreleased]: https://github.com/8u9i/mdview/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/8u9i/mdview/releases/tag/v0.1.0

@@ -11,7 +11,7 @@ How to publish MDView to GitHub.
 #    Do NOT initialize with README, license, or .gitignore — we already have them.
 
 # 2. Add the remote.
-git remote add origin https://github.com/your-org/mdview.git
+git remote add origin https://github.com/8u9i/mdview.git
 
 # 3. Push the initial commit.
 git push -u origin master

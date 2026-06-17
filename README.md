@@ -2,7 +2,7 @@
 
 A small, fast, native **Markdown viewer for Windows 11**, built on [Tauri 2](https://v2.tauri.app) and WebView2.
 
-[![CI](https://github.com/your-org/mdview/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/mdview/actions/workflows/ci.yml)
+[![CI](https://github.com/8u9i/mdview/actions/workflows/ci.yml/badge.svg)](https://github.com/8u9i/mdview/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Tauri 2](https://img.shields.io/badge/Tauri-2.x-blueviolet)](https://v2.tauri.app)
 [![Rust 1.77+](https://img.shields.io/badge/rust-1.77%2B-orange)](https://www.rust-lang.org)
@@ -50,7 +50,7 @@ A small, fast, native **Markdown viewer for Windows 11**, built on [Tauri 2](htt
 ### From source
 
 ```bash
-git clone https://github.com/your-org/mdview.git
+git clone https://github.com/8u9i/mdview.git
 cd mdview
 npm install
 npm run build        # produces installers in src-tauri/target/release/bundle/
