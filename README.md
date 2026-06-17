@@ -36,13 +36,13 @@ A small, fast, native **Markdown viewer for Windows 11**, built on [Tauri 2](htt
 
 ### From the installer (recommended)
 
-1. Download the latest release from [GitHub Releases](https://github.com/your-org/mdview/releases).
+1. Download the latest release from [GitHub Releases](https://github.com/8u9i/mdview/releases).
 2. Run `MDView_0.1.0_x64-setup.exe` (NSIS) or `MDView_0.1.0_x64_en-US.msi` (Windows Installer).
 3. Right-click any `.md` file → **Open with** → MDView.
 
 ### Portable (single executable)
 
-1. Download `mdview.exe` from [GitHub Releases](https://github.com/your-org/mdview/releases).
+1. Download `mdview.exe` from [GitHub Releases](https://github.com/8u9i/mdview/releases).
 2. Place it anywhere on your `PATH`.
 3. *(Optional)* Double-click `register-file-association.reg` from this repo to wire up the `.md` association.
 4. Launch: `mdview.exe path\to\file.md` or double-click any `.md` after the reg import.

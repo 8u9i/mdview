@@ -54,7 +54,7 @@ Backend tests are run via `cargo test` from `src-tauri/`.
 │   ├── gen-icons.mjs       Generates the icon set
 │   ├── test-bundle.mjs     Frontend smoke test
 │   └── test-runtime.mjs    Frontend runtime test (jsdom)
-├── docs/                   Design audits, AGENTS notes
+├── docs/                   Design audits
 ├── examples/
 │   └── sample.md           Sample markdown used by tests + the empty-state button
 ├── register-file-association.reg   Optional .reg file for portable file association

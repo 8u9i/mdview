@@ -9,7 +9,7 @@ MDView.exe
 !scripts/**/*.exe
 
 # Local / generated design audits (kept in docs/design as committed artifacts)
-/.commandcode/
+/.opencode/
 
 # Node
 /node_modules/
