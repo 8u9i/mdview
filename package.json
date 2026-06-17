@@ -1,0 +1,34 @@
+{
+  "name": "mdview",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A small, fast, native markdown viewer for Windows 11, built on Tauri 2 and WebView2.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "tauri": "tauri",
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "dev:web": "node ./scripts/dev-server.mjs",
+    "build:web": "node ./scripts/build-static.mjs",
+    "test:web": "node ./scripts/test-bundle.mjs",
+    "test:runtime": "node ./scripts/test-runtime.mjs",
+    "icons": "node ./scripts/gen-icons.mjs"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.11.0",
+    "@tauri-apps/plugin-dialog": "^2.7.1",
+    "@tauri-apps/plugin-fs": "^2.5.1",
+    "dompurify": "^3.4.10",
+    "highlight.js": "^11.11.1",
+    "marked": "^18.0.5"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.2",
+    "esbuild": "^0.25.0",
+    "jsdom": "^29.1.1"
+  }
+}

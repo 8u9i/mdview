@@ -1,0 +1,135 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  # ------------------------------------------------------------------
+  # Frontend tests — fast, no Rust toolchain required
+  # ------------------------------------------------------------------
+  frontend:
+    name: Frontend tests
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build the frontend bundle
+        run: npm run build:web
+
+      - name: Run frontend smoke test (marked + DOMPurify + hljs)
+        run: node scripts/test-bundle.mjs
+
+      - name: Run frontend runtime test (jsdom)
+        run: node scripts/test-runtime.mjs
+
+  # ------------------------------------------------------------------
+  # Backend tests — full Rust toolchain
+  # ------------------------------------------------------------------
+  backend:
+    name: Backend tests (cargo)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache Cargo registry and target
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            src-tauri/target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('src-tauri/Cargo.lock', 'src-tauri/Cargo.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Build frontend
+        run: npm run build:web
+
+      - name: Run cargo test
+        working-directory: src-tauri
+        run: cargo test --all-targets --locked
+
+      - name: cargo clippy
+        working-directory: src-tauri
+        run: cargo clippy --all-targets --locked -- -D warnings
+        continue-on-error: false
+
+      - name: cargo fmt check
+        working-directory: src-tauri
+        run: cargo fmt --all -- --check
+
+  # ------------------------------------------------------------------
+  # Release build — full installer pipeline
+  # Runs only on main pushes and tags, gated by the backend job.
+  # ------------------------------------------------------------------
+  release:
+    name: Release build
+    needs: [frontend, backend]
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/'))
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build installers
+        run: npm run build
+
+      - name: Upload .exe
+        uses: actions/upload-artifact@v4
+        with:
+          name: mdview-windows-exe
+          path: src-tauri/target/release/mdview.exe
+          if-no-files-found: error
+
+      - name: Upload MSI
+        uses: actions/upload-artifact@v4
+        with:
+          name: mdview-windows-msi
+          path: src-tauri/target/release/bundle/msi/*.msi
+          if-no-files-found: error
+
+      - name: Upload NSIS
+        uses: actions/upload-artifact@v4
+        with:
+          name: mdview-windows-nsis
+          path: src-tauri/target/release/bundle/nsis/*.exe
+          if-no-files-found: error

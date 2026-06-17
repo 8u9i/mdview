@@ -1,0 +1,39 @@
+# Normalize line endings so files are consistent across platforms.
+# On Windows checkouts, files are converted to CRLF; on macOS/Linux, LF.
+* text=auto eol=lf
+
+# Explicit binary file types
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.pdf binary
+*.zip binary
+*.msi binary
+*.exe binary
+
+# Shell scripts must keep LF
+*.sh text eol=lf
+
+# Rust source as LF (rustfmt expects LF)
+*.rs text eol=lf
+*.toml text eol=lf
+
+# Markdown as LF
+*.md text eol=lf
+
+# HTML, CSS, JS
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.mjs text eol=lf
+
+# Windows-specific: .reg and .bat keep CRLF (Windows requires it)
+*.reg text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf

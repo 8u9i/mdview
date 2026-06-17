@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>MDView - Smell Report</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<style>
+		body { font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+		.mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+		.report-section { border: 1px solid #222226; background: #0a0a0b; position: relative; }
+		.corner-box { position: absolute; width: 20px; height: 20px; border: 1px solid #222226; background: #000; }
+	</style>
+</head>
+<body class="bg-black text-[#fafafa]">
+	<main class="mx-auto w-full max-w-6xl px-5 py-8 md:px-10 md:py-12">
+		<header class="report-section mb-8 p-6 md:p-8">
+			<div class="corner-box left-0 top-0 -translate-x-1/2 -translate-y-1/2"></div>
+			<div class="corner-box right-0 top-0 translate-x-1/2 -translate-y-1/2"></div>
+			<div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+				<div>
+					<div class="mono mb-2 text-xs tracking-widest text-[#666]">// SMELL</div>
+					<h1 class="text-4xl font-bold tracking-tight md:text-6xl">MDView</h1>
+					<p class="mt-2 text-sm text-[#666]">Generic-pattern detector · 10-odor catalog</p>
+				</div>
+				<div class="mono text-left text-xs text-[#666] md:text-right">
+					<div>COMMANDCODE REPORT</div>
+					<div class="text-[#444]">2026-06-17</div>
+				</div>
+			</div>
+		</header>
+
+		<section class="report-section mb-8 p-6 md:p-8">
+			<div class="corner-box left-0 top-0 -translate-x-1/2 -translate-y-1/2"></div>
+			<div class="corner-box right-0 top-0 translate-x-1/2 -translate-y-1/2"></div>
+			<div class="grid gap-8 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
+				<div>
+					<div class="mono mb-2 text-xs tracking-widest text-[#666]">// SCORE</div>
+					<div class="text-6xl font-bold tracking-tight md:text-7xl">8</div>
+					<div class="mt-1 text-lg text-[#666]">/ 10 · FAINT</div>
+					<div class="mt-4 inline-flex border border-[#fbbf24]/30 bg-[#fbbf24]/10 px-3 py-1 text-sm text-[#fbbf24]">2 FAINT TELL(S)</div>
+				</div>
+				<div>
+					<div class="mono mb-3 text-xs tracking-widest text-[#666]">// TL;DR</div>
+					<p class="text-sm leading-6 text-[#a0a0a0]">Two faint odors detected: the M-letter-tile brand mark (icon-topper reflex) and the original center-stacked empty state (center-stack reflex). Both are being addressed in this pass. The product lane is clean: no tech gradient, no feature tile grid, no stat monument, no default type, no bounce.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="report-section mb-8 p-6 md:p-8">
+			<div class="mono mb-6 text-xs tracking-widest text-[#666]">// 10-ODOR CATALOG</div>
+			<div class="overflow-x-auto">
+				<table class="w-full min-w-[720px] border-collapse text-sm">
+					<thead>
+						<tr class="border-b border-[#222226] text-left mono text-xs text-[#666]">
+							<th class="py-3 pr-4 font-normal">#</th>
+							<th class="py-3 pr-4 font-normal">ODOR</th>
+							<th class="py-3 pr-4 font-normal">STATUS</th>
+							<th class="py-3 font-normal">EVIDENCE</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="border-b border-[#1a1a1e]">
+							<td class="py-4 pr-4 text-[#555]">1</td>
+							<td class="py-4 pr-4 text-[#fafafa]">Tech gradient</td>
+							<td class="py-4 pr-4 text-[#34d399]">ABSENT</td>
+							<td class="py-4 text-[#a0a0a0]">No blue-violet or indigo-cyan gradients. One flat teal accent.</td>
+						</tr>
+						<tr class="border-b border-[#1a1a1e]">
+							<td class="py-4 pr-4 text-[#555]">2</td>
+							<td class="py-4 pr-4 text-[#fafafa]">Generic tech hue</td>
+							<td class="py-4 pr-4 text-[#34d399]">ABSENT</td>
+							<td class="py-4 text-[#a0a0a0]">Accent is OKLCH teal at 195°, not blue-purple. Domain (file viewer) does not trigger reflex.</td>
+						</tr>
+						<tr class="border-b border-[#1a1a1e]">
+							<td class="py-4 pr-4 text-[#555]">3</td>
+							<td class="py-4 pr-4 text-[#fafafa]">Feature tile grid</td>
+							<td class="py-4 pr-4 text-[#34d399]">ABSENT</td>
+							<td class="py-4 text-[#a0a0a0]">No feature cards. The reading surface is a single prose column.</td>
+						</tr>
+						<tr class="border-b border-[#1a1a1e]">
+							<td class="py-4 pr-4 text-[#555]">4</td>
+							<td class="py-4 pr-4 text-[#fafafa]">Accent rail</td>
+							<td class="py-4 pr-4 text-[#34d399]">ABSENT</td>
+							<td class="py-4 text-[#a0a0a0]">No colored stripes on cards. Accent reserved for active outline item and primary button.</td>
+						</tr>
+						<tr class="border-b border-[#1a1a1e]">
+							<td class="py-4 pr-4 text-[#555]">5</td>
+							<td class="py-4 pr-4 text-[#fafafa]">Unearned blur</td>
+							<td class="py-4 pr-4 text-[#34d399]">ABSENT</td>
+							<td class="py-4 text-[#a0a0a0]">No frosted-glass panels. Surfaces are flat.</td>
+						</tr>
+						<tr class="border-b border-[#1a1a1e]">
+							<td class="py-4 pr-4 text-[#555]">6</td>
+							<td class="py-4 pr-4 text-[#fafafa]">Stat monument</td>
+							<td class="py-4 pr-4 text-[#34d399]">ABSENT</td>
+							<td class="py-4 text-[#a0a0a0]">No oversized number clusters. The product is a viewer.</td>
+						</tr>
+						<tr class="border-b border-[#1a1a1e]">
+							<td class="py-4 pr-4 text-[#555]">7</td>
+							<td class="py-4 pr-4 text-[#fafafa]">Icon topper</td>
+							<td class="py-4 pr-4 text-[#fbbf24]">FAINT</td>
+							<td class="py-4 text-[#a0a0a0]">M-letter-tile in titlebar is the AI-default brand mark. Replace with document-outline icon.</td>
+						</tr>
+						<tr class="border-b border-[#1a1a1e]">
+							<td class="py-4 pr-4 text-[#555]">8</td>
+							<td class="py-4 pr-4 text-[#fafafa]">Bounce everywhere</td>
+							<td class="py-4 pr-4 text-[#34d399]">ABSENT</td>
+							<td class="py-4 text-[#a0a0a0]">Motion is functional: hover, toast, loading bar. No elastic easing.</td>
+						</tr>
+						<tr class="border-b border-[#1a1a1e]">
+							<td class="py-4 pr-4 text-[#555]">9</td>
+							<td class="py-4 pr-4 text-[#fafafa]">Default type</td>
+							<td class="py-4 pr-4 text-[#34d399]">ABSENT</td>
+							<td class="py-4 text-[#a0a0a0]">System stack (Segoe UI Variable on Win11). Not Inter, not Plus Jakarta.</td>
+						</tr>
+						<tr class="border-b border-[#1a1a1e]">
+							<td class="py-4 pr-4 text-[#555]">10</td>
+							<td class="py-4 pr-4 text-[#fafafa]">Center stack</td>
+							<td class="py-4 pr-4 text-[#fbbf24]">FAINT</td>
+							<td class="py-4 text-[#a0a0a0]">Original empty state was a centered hero. Replaced with 2-column Operate layout in this pass.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section class="report-section mb-8 p-6 md:p-8">
+			<div class="mono mb-6 text-xs tracking-widest text-[#666]">// DOMAIN DEFAULT TRAP</div>
+			<div class="grid gap-6 md:grid-cols-2">
+				<div>
+					<div class="mb-3 text-xl font-semibold">PASS</div>
+					<ul class="space-y-3 text-sm text-[#a0a0a0]">
+						<li><span class="mono mr-2 text-[#34d399]">PASS</span>A "developer tool" usually defaults to dark + terminal mono + neon green. MDView is dark but uses Segoe UI Variable + teal — close to but distinct from that.</li>
+						<li><span class="mono mr-2 text-[#34d399]">PASS</span>A "note-taking app" usually defaults to cream + rounded sans. MDView is clearly not that.</li>
+						<li><span class="mono mr-2 text-[#fbbf24]">WATCH</span>The teal at 195° is unusual enough to be a real choice, not a category reflex — but the M-letter-tile logo could still read as a generic pattern.</li>
+					</ul>
+				</div>
+				<div>
+					<div class="mono mb-3 text-xs tracking-widest text-[#666]">// NEXT MODES</div>
+					<div class="flex flex-wrap gap-2">
+						<span class="border border-[#333] px-3 py-1 text-sm text-[#a0a0a0]">/design surface</span>
+						<span class="border border-[#333] px-3 py-1 text-sm text-[#a0a0a0]">/design finish</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="report-section mb-8 p-6 md:p-8">
+			<div class="mono mb-6 text-xs tracking-widest text-[#666]">// WHAT THE DESIGN OWNS</div>
+			<div class="grid gap-4 md:grid-cols-3">
+				<article class="border border-[#1f1f24] p-4">
+					<h2 class="mb-2 text-sm font-semibold">A real color decision</h2>
+					<p class="text-sm leading-6 text-[#a0a0a0]">OKLCH teal at 195° over a tinted neutral, not the generic blue-violet.</p>
+				</article>
+				<article class="border border-[#1f1f24] p-4">
+					<h2 class="mb-2 text-sm font-semibold">Type: system stack</h2>
+					<p class="text-sm leading-6 text-[#a0a0a0]">Tuned to the OS, not a downloaded font.</p>
+				</article>
+				<article class="border border-[#1f1f24] p-4">
+					<h2 class="mb-2 text-sm font-semibold">Composition with three jobs</h2>
+					<p class="text-sm leading-6 text-[#a0a0a0]">Titlebar (Operate) + reading surface (Learn) + outline (Learn aid) — not a generic grid.</p>
+				</article>
+				<article class="border border-[#1f1f24] p-4">
+					<h2 class="mb-2 text-sm font-semibold">Functional motion only</h2>
+					<p class="text-sm leading-6 text-[#a0a0a0]">Hover, toast, loading bar. No bounce, no elastic easing.</p>
+				</article>
+				<article class="border border-[#1f1f24] p-4">
+					<h2 class="mb-2 text-sm font-semibold">Copy as instruction, not pitch</h2>
+					<p class="text-sm leading-6 text-[#a0a0a0]">"Open a markdown file to begin" — an instruction, not a marketing line.</p>
+				</article>
+				<article class="border border-[#1f1f24] p-4">
+					<h2 class="mb-2 text-sm font-semibold">A product-specific detail</h2>
+					<p class="text-sm leading-6 text-[#a0a0a0]">The drop-zone uses the same teal as the primary action — dropping a file is the same intent.</p>
+				</article>
+			</div>
+		</section>
+
+		<footer class="mono py-8 text-center text-xs tracking-widest text-[#444]">
+			Generated with CommandCode - 2026-06-17
+		</footer>
+	</main>
+</body>
+</html>

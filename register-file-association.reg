@@ -1,0 +1,40 @@
+Windows Registry Editor Version 5.00
+
+; MDView — file association registration for standalone (non-installer) use.
+; Double-click this file (or import it via regedit) to register .md, .markdown,
+; .mdown, .mkd, and .txt as "Open with MDView" targets pointing at MDView.exe
+; in this directory.
+
+; The full path of MDView.exe (this directory). The reg file uses an absolute
+; path derived from where the reg file lives. If you move MDView.exe, re-run
+; this reg from the new location, or edit the path below.
+
+; --- .md ---
+[HKEY_CURRENT_USER\Software\Classes\.md]
+@="MDView.Markdown"
+
+[HKEY_CURRENT_USER\Software\Classes\MDView.Markdown]
+@="Markdown Document"
+
+[HKEY_CURRENT_USER\Software\Classes\MDView.Markdown\DefaultIcon]
+@="D:\\New CMDC\\12AM\\MDView.exe,0"
+
+[HKEY_CURRENT_USER\Software\Classes\MDView.Markdown\shell\open\command]
+@="\"D:\\New CMDC\\12AM\\MDView.exe\" \"%1\""
+
+; --- .markdown ---
+[HKEY_CURRENT_USER\Software\Classes\.markdown]
+@="MDView.Markdown"
+
+; --- .mdown ---
+[HKEY_CURRENT_USER\Software\Classes\.mdown]
+@="MDView.Markdown"
+
+; --- .mkd ---
+[HKEY_CURRENT_USER\Software\Classes\.mkd]
+@="MDView.Markdown"
+
+; --- .txt (optional; remove the [HKEY_CURRENT_USER\Software\Classes\.txt] block
+;     below if you don't want MDView as a registered handler for plain text) ---
+[HKEY_CURRENT_USER\Software\Classes\.txt\OpenWithProgids]
+"MDView.Markdown"=""

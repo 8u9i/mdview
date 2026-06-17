@@ -1,0 +1,50 @@
+# Build outputs
+/dist/
+/src-tauri/target/
+/src-tauri/gen/
+
+# Standalone binary built by the user (release via GitHub Releases, not committed)
+MDView.exe
+*.exe
+!scripts/**/*.exe
+
+# Local / generated design audits (kept in docs/design as committed artifacts)
+/.commandcode/
+
+# Node
+/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Rust
+**/*.rs.bk
+Cargo.lock.bak
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.iml
+
+# Logs and temp
+*.log
+*.tmp
+*.bak
+*.orig
+coverage/
+.nyc_output/
+
+# Environment
+.env
+.env.local
+.env.*.local
